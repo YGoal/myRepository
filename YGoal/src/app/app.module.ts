@@ -22,7 +22,12 @@ import { HttpModule } from '@angular/http';
 import { UserProvider } from '../providers/user/user';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
+
 import {FIREBASE_CONFIG} from "./app.firebase.config";
+import { MatchProvider } from '../providers/match/match';
+import { BabyProvider } from '../providers/baby/baby';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,8 @@ import {FIREBASE_CONFIG} from "./app.firebase.config";
     HttpModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -62,7 +68,9 @@ import {FIREBASE_CONFIG} from "./app.firebase.config";
     Dialogs,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserProvider
+    UserProvider,
+    MatchProvider,
+    BabyProvider
   ]
 })
 export class AppModule {}
