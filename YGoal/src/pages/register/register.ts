@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { User } from "../../../../YGoal/myRepository/YGoal/src/models/user"
+import { UserProvider } from "../../providers/user/user"
 import { AngularFireAuth } from "angularfire2/auth";
 
 /**
@@ -17,14 +17,14 @@ import { AngularFireAuth } from "angularfire2/auth";
 })
 export class RegisterPage {
 
-  user = {} as User;
+  user = {} as UserProvider;
 
   constructor(private afAuth: AngularFireAuth,
 
     public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  async register(user: User){
+  async register(user: UserProvider){
     try {
       const result = await this.afAuth.auth.createUserWithEmailAndPassword(user.email,user.password);
       console.log(result);

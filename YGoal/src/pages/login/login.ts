@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {User} from "../../../../YGoal/myRepository/YGoal/src/models/user";
+import {UserProvider} from "../../providers/user/user";
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Dialogs } from '@ionic-native/dialogs';
 
@@ -18,7 +18,7 @@ import { Dialogs } from '@ionic-native/dialogs';
 })
 export class LoginPage {
 
-  user = {} as User;
+  user = {} as UserProvider;
 
   constructor(private afAuth: AngularFireAuth,private dialogs: Dialogs,
 
@@ -26,7 +26,7 @@ export class LoginPage {
   }
 
 
-  async login(user: User){
+  async login(user: UserProvider){
     try{
       const result =  this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       console.log(result);
