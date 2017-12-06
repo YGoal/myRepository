@@ -1,0 +1,8 @@
+{
+  "name": "tutoapp",
+  "app_id": "3ce355af",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
