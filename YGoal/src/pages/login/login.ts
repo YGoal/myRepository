@@ -3,7 +3,8 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {UserProvider} from "../../providers/user/user";
 import {AngularFireAuth} from 'angularfire2/auth';
 import {Dialogs} from '@ionic-native/dialogs';
-import { MatchProvider } from "../../providers/match/match"
+import {MatchProvider} from "../../providers/match/match"
+import {BabyProvider} from "../../providers/baby/baby"
 
 /**
  * Generated class for the LoginPage page.
@@ -20,13 +21,10 @@ import { MatchProvider } from "../../providers/match/match"
 export class LoginPage {
 
   user = {} as UserProvider;
-  items;
 
   constructor(private afAuth: AngularFireAuth, private dialogs: Dialogs,
               public navCtrl: NavController, public navParams: NavParams,
-              match : MatchProvider) {
-    this.items = match.Match;
-    console.error(match.Match);
+              public match: MatchProvider, public baby: BabyProvider) {
   }
 
   async login(user: UserProvider) {

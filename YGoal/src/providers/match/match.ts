@@ -1,9 +1,8 @@
-import {Injectable, NgModule} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {Match} from "../../entities/Match";
-import { AngularFireDatabase } from "angularfire2/database";
-import { Observable } from 'rxjs/Observable';
+import {AngularFireDatabase} from "angularfire2/database";
+import 'rxjs/add/operator/map';
 
 /*
   Generated class for the MatchProvider provider.
@@ -14,26 +13,74 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class MatchProvider {
 
-  public Match: Observable<any[]>;
+  public Match: any;
 
   constructor(public http: Http, public database: AngularFireDatabase) {
-    console.info('Call of MatchProvider');
-    this.Match = database.list("Match").valueChanges();
-    console.error(this.Match);
-    console.error(this.Match[0]);
   }
 
-  getMatchById(id: number) {
-    let obj = {};
-    return new Match(obj);
+  add(object) {
+    this.database.list('Match').push({
+      idBaby: object["idBaby"],
+      score1: object["score1"],
+      score2: object["score2"],
+      statut: object["statut"]
+    });
+  }
+
+  update(id, object) {
+    this.database.object("Match/" + id).update({
+      idBaby: object["idBaby"],
+      score1: object["score1"],
+      score2: object["score2"],
+      statut: object["statut"]
+    });
+  }
+
+  remove(id) {
+    this.database.object("Match/" + id).remove()
+  }
+
+  getAllMatch() {
+    return this.database.list("Match")
+      .snapshotChanges()
+  }
+
+  getMatchById(id) {
+    return this.database.list("Match", ref => ref.orderByChild('id').equalTo(id))
+      .snapshotChanges();
   }
 
   getMatchsByStatut(statut: number) {
-
+    return this.database.list("Match", ref => ref.orderByChild('statut').equalTo(statut))
+      .snapshotChanges();
   }
 
-  getMatchsByIdBaby(idBaby: number) {
-
+  getMatchsByIdBaby(idBaby) {
+    return this.database.list("Match", ref => ref.orderByChild('idBaby').equalTo(idBaby))
+      .snapshotChanges();
   }
 
 }
+
+//
+// addMatch() {
+//   this.match.add({
+//     idBaby: 50,
+//     score1: 0,
+//     score2: 0,
+//     statut: 0
+//   });
+// }
+//
+// updateMatch() {
+//   this.match.update("-L0sf00E9A69NGml1KKx",{
+//     idBaby: 888,
+//     score1: 888,
+//     score2: 888,
+//     statut: 888
+//   })
+// }
+//
+// removeMatch() {
+//   this.match.remove("-L0t8ulyvpFPUTG6DY5o");
+// }

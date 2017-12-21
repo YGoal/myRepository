@@ -27,10 +27,5 @@
 
   <button ion-button (click)="login(user)">Login</button>
   <button ion-button (click)="register()">Register</button>
-  <ul>
-    <li *ngFor="let item of items | async">
-      {{ item | json }}
-    </li>
-  </ul>
 
 </ion-content>

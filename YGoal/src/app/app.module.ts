@@ -24,6 +24,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import {FIREBASE_CONFIG} from "./app.firebase.config";
 import { MatchProvider } from '../providers/match/match';
@@ -47,6 +48,7 @@ import { BabyProvider } from '../providers/baby/baby';
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireAuthModule,
+    AngularFirestoreModule,
     AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
