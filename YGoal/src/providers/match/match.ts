@@ -21,8 +21,13 @@ export class MatchProvider {
   add(object) {
     this.database.list('Match').push({
       idBaby: object["idBaby"],
+      typeRecherche: object["typeRecherche"],
       score1: object["score1"],
       score2: object["score2"],
+      equipe1: object["equipe1"],
+      equipe2: object["equipe2"],
+      typeVictoire: object["typeVictoire"],
+      conditionVictoire: object["conditionVictoire"],
       statut: object["statut"]
     });
   }
@@ -30,8 +35,13 @@ export class MatchProvider {
   update(id, object) {
     this.database.object("Match/" + id).update({
       idBaby: object["idBaby"],
+      typeRecherche: object["typeRecherche"],
       score1: object["score1"],
       score2: object["score2"],
+      equipe1: object["equipe1"],
+      equipe2: object["equipe2"],
+      typeVictoire: object["typeVictoire"],
+      conditionVictoire: object["conditionVictoire"],
       statut: object["statut"]
     });
   }

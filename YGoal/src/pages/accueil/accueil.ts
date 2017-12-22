@@ -22,4 +22,7 @@ export class AccueilPage {
     console.log('ionViewDidLoad AccueilPage');
   }
 
+  goTo(str){
+    this.navCtrl.push(str);
+  }
 }

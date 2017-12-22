@@ -23,8 +23,7 @@ export class LoginPage {
   user = {} as UserProvider;
 
   constructor(private afAuth: AngularFireAuth, private dialogs: Dialogs,
-              public navCtrl: NavController, public navParams: NavParams,
-              public match: MatchProvider, public baby: BabyProvider) {
+              public navCtrl: NavController, public navParams: NavParams) {
   }
 
   async login(user: UserProvider) {
