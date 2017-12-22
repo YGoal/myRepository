@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {UserProvider} from "../../providers/user/user";
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Dialogs } from '@ionic-native/dialogs';
-import {LogoComponent} from "../../components/logo/logo";
 
 /**
  * Generated class for the LoginPage page.
@@ -23,31 +22,29 @@ export class LoginPage {
 
   user = {} as UserProvider;
 
-  constructor(private afAuth: AngularFireAuth,private dialogs: Dialogs,
-
-    public navCtrl: NavController, public navParams: NavParams) {
-
+  constructor(private afAuth: AngularFireAuth, private dialogs: Dialogs,
+              public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  async login(user: UserProvider){
-    try{
-      const result =  this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+  async login(user: UserProvider) {
+    try {
+      const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       console.log(result);
 
-      if(result){
+      if (result) {
         this.navCtrl.push('AccueilPage');
-      }else{
+      } else {
         this.dialogs.alert('Email ou mot de passe incorrect')
           .then(() => console.log('Dialog dismissed'))
           .catch(e => console.log('Error displaying dialog', e));
       }
     }
-    catch(e){
+    catch (e) {
       console.log(e);
     }
-    }
+  }
 
-  register(){
+  register() {
     this.navCtrl.push('RegisterPage');
   }
 

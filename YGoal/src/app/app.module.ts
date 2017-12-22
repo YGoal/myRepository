@@ -22,8 +22,16 @@ import { HttpModule } from '@angular/http';
 import { UserProvider } from '../providers/user/user';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { FIREBASE_CONFIG } from "./app.firebase.config";
+
 import {LogoComponent} from "../components/logo/logo";
+
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+import {FIREBASE_CONFIG} from "./app.firebase.config";
+import { MatchProvider } from '../providers/match/match';
+import { BabyProvider } from '../providers/baby/baby';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +51,9 @@ import {LogoComponent} from "../components/logo/logo";
     HttpModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -66,6 +76,8 @@ import {LogoComponent} from "../components/logo/logo";
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserProvider,
     LogoComponent,
+    MatchProvider,
+    BabyProvider
   ]
 })
 export class AppModule {}
