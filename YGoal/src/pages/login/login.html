@@ -1,31 +1,28 @@
-<!--
-  Generated template for the LoginPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar color="primary">
-    <ion-title>Login</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-  <ion-item>
-    <ion-label floating>Adresse email</ion-label>
-    <ion-input type="text" [(ngModel)]="user.email"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label floating>Mot de passe</ion-label>
-    <ion-input type="password" [(ngModel)]="user.password"></ion-input>
-  </ion-item>
-
-  <button ion-button (click)="login(user)">Login</button>
-  <button ion-button (click)="register()">Register</button>
-
-  </ion-content>
+<ion-content class="gradientapp">
+  <div class="centertext">
+    <logo></logo>
+    <div class="connexion">CONNEXION</div>
+    <ion-item class="identifiant">
+      <ion-icon name="ios-mail-outline" item-start></ion-icon>
+      <ion-input type="email" [(ngModel)]="user.email" placeholder="E-mail" clearInput></ion-input>
+    </ion-item>
+    <ion-item class="identifiant">
+      <ion-icon name="ios-lock-outline" item-start></ion-icon>
+      <ion-input type="password" [(ngModel)]="user.password" placeholder="Mot de passe" clearInput></ion-input>
+    </ion-item>
+    <button ion-button (click)="login(user)" color="grey" class="log" style="border-radius: 10px">SE CONNECTER</button>
+    <div class="oubli">Mot de passe oublié</div>
+    <div style="color: #f4f4f4;margin: auto;margin-top: 40px;">
+      ou se connecter via les réseaux
+    </div>
+    <div class="sonetwork">
+      <ion-icon name="logo-facebook" style="font-size: 60px;margin-left: 15%"></ion-icon>
+      <ion-icon name="logo-twitter" style="font-size: 60px"></ion-icon>
+      <ion-icon name="logo-googleplus" style="font-size: 60px;margin-right: 15%"></ion-icon>
+    </div>
+    <footer class="register">
+      Pas encore membre?<br>
+      <button ion-button color=shadow (click)="register()" style="width: 250px;margin: auto">Cliquez ici pour créer un compte</button>
+    </footer>
+  </div>
+</ion-content>

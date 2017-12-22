@@ -22,7 +22,8 @@ import { HttpModule } from '@angular/http';
 import { UserProvider } from '../providers/user/user';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import {FIREBASE_CONFIG} from "./app.firebase.config";
+import { FIREBASE_CONFIG } from "./app.firebase.config";
+import {LogoComponent} from "../components/logo/logo";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {FIREBASE_CONFIG} from "./app.firebase.config";
     TabsPage,
     LoginPage,
     ArchivedTodosPage,
-    ProductDetailsPage
+    ProductDetailsPage,
+    LogoComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +64,8 @@ import {FIREBASE_CONFIG} from "./app.firebase.config";
     Dialogs,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserProvider
+    UserProvider,
+    LogoComponent,
   ]
 })
 export class AppModule {}

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {UserProvider} from "../../providers/user/user";
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Dialogs } from '@ionic-native/dialogs';
+import {LogoComponent} from "../../components/logo/logo";
 
 /**
  * Generated class for the LoginPage page.
@@ -18,13 +19,15 @@ import { Dialogs } from '@ionic-native/dialogs';
 })
 export class LoginPage {
 
+
+
   user = {} as UserProvider;
 
   constructor(private afAuth: AngularFireAuth,private dialogs: Dialogs,
 
     public navCtrl: NavController, public navParams: NavParams) {
-  }
 
+  }
 
   async login(user: UserProvider){
     try{

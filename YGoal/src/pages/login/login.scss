@@ -1,3 +1,55 @@
 page-login {
-
+  .connexion{
+    color: #f4f4f4;
+    font-size: 25px;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-family: gloryunited;
+    letter-spacing: 3px;
+  }
+  .centertext{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .identifiant{
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 300px;
+  }
+  .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+  .log{
+    margin: auto;
+    width: 300px;
+  }
+  .register{
+    width: 100%;
+    margin: auto;
+    color: #f4f4f4;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+  }
+  .sonetwork{
+    margin:auto;
+    color: #f4f4f4;
+    margin-top:10px;
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+  }
+  .oubli{
+    margin: auto;
+    color:#ffffff;
+    margin-top: 10px;
+  }
 }
