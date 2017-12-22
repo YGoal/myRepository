@@ -1,10 +1,8 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {UserProvider} from "../../providers/user/user";
-import {AngularFireAuth} from 'angularfire2/auth';
-import {Dialogs} from '@ionic-native/dialogs';
-import {MatchProvider} from "../../providers/match/match"
-import {BabyProvider} from "../../providers/baby/baby"
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Dialogs } from '@ionic-native/dialogs';
 
 /**
  * Generated class for the LoginPage page.
@@ -19,6 +17,8 @@ import {BabyProvider} from "../../providers/baby/baby"
   templateUrl: 'login.html',
 })
 export class LoginPage {
+
+
 
   user = {} as UserProvider;
 

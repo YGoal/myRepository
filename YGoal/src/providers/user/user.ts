@@ -12,10 +12,8 @@ import {getResponseURL} from "@angular/http/src/http_utils";
 const API: string = "https://ygoal-e23de.firebaseio.com/Users.json";
 @Injectable()
 export class UserProvider {
-
   public email;
   public password;
-
   constructor(public http: Http) {
     console.log('Hello UserProvider Provider');
   }

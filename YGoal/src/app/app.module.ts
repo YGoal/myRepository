@@ -24,12 +24,14 @@ import {UserProvider} from '../providers/user/user';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
-import {AngularFireDatabase} from 'angularfire2/database';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
+
+import {LogoComponent} from "../components/logo/logo";
 
 import {FIREBASE_CONFIG} from "./app.firebase.config";
 import {MatchProvider} from '../providers/match/match';
 import {BabyProvider} from '../providers/baby/baby';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import {BabyProvider} from '../providers/baby/baby';
     TabsPage,
     LoginPage,
     ArchivedTodosPage,
-    ProductDetailsPage
+    ProductDetailsPage,
+    LogoComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +76,7 @@ import {BabyProvider} from '../providers/baby/baby';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserProvider,
+    LogoComponent,
     MatchProvider,
     BabyProvider
   ]
