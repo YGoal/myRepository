@@ -21,6 +21,7 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpModule} from '@angular/http';
 import {UserProvider} from '../providers/user/user';
+
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';

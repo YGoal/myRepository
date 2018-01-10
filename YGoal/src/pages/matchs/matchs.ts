@@ -17,12 +17,13 @@ import {AlertController} from 'ionic-angular';
 })
 export class MatchsPage {
 
-  nbJoueur;
   victoire;
+  nbJoueur;
   conditoinVictoire;
   equipe1;
   equipe2;
   typeRecherche;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public matchProvider: MatchProvider, private alertCtrl: AlertController) {
     this.conditoinVictoire = 10;

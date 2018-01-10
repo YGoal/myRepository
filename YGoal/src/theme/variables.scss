@@ -17,9 +17,13 @@ $colors: (
   background-color: transparent;
   background: linear-gradient(#212849,#1c3661,#4cc2f1);
 }
+.title{
+  font-family: "gloryunited";
+  letter-spacing: 3px;
+}
 @font-face {
   font-family: "gloryunited";
-  src: url('../../assets/fonts/Glory_United.otf');
+  src: url('../assets/fonts/Glory_United.otf');
 }
 
 @import "ionic.theme.default";

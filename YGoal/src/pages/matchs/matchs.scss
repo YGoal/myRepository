@@ -1,3 +1,19 @@
-page-matchs {
+page-matchs ,.equipe{
+  text-align: center;
+  font-size: 16px;
+}
+h1,ion-label,ion-range *,.inputConditionVictoire{
+  color: whitesmoke;
+}
 
+
+.equipe span{
+  font-size: 10px;
+  display:block;
+}
+.equipe{
+  display:block;
+}
+.inputConditionVictoire{
+  background-color: transparent;
 }

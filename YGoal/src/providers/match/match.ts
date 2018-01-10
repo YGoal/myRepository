@@ -20,6 +20,7 @@ export class MatchProvider {
 
   add(object) {
     this.database.list('Match').push({
+      date:Date.now(),
       idBaby: object["idBaby"],
       typeRecherche: object["typeRecherche"],
       score1: object["score1"],
