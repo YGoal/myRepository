@@ -15,4 +15,78 @@
 
 <ion-content padding>
 
+  <ion-segment [(ngModel)]="typeRecherche" color="primary">
+    <ion-segment-button (click)="onNbJoueurChange()" value="creation">
+      Créer un Match
+    </ion-segment-button>
+    <ion-segment-button (click)="onNbJoueurChange()" value="gagne">
+      Prendre la Gagne
+    </ion-segment-button>
+  </ion-segment>
+  <ion-label>Nombre de Joueur Total :</ion-label>
+  <ion-range *ngIf="typeRecherche == 'creation'" (ionChange)="onNbJoueurChange()" min="2" step="1" pin="true"
+             snaps="true" max="8" [(ngModel)]="nbJoueur"
+             color="secondary">
+    <ion-label range-left>2</ion-label>
+    <ion-label range-right>8</ion-label>
+  </ion-range>
+
+  <ion-range *ngIf="typeRecherche == 'gagne'" (ionChange)="onNbJoueurChange()" min="1" step="1" pin="true"
+             snaps="true" max="4" [(ngModel)]="nbJoueur"
+             color="secondary">
+    <ion-label range-left>1</ion-label>
+    <ion-label range-right>4</ion-label>
+  </ion-range>
+
+
+  <ion-label>Equipe 1 :</ion-label>
+
+  <ion-item *ngIf="typeRecherche == 'creation'">
+    <ion-label color="dark" *ngFor="let joueurEquipe1 of equipe1; let i = index" (click)="changeNomJoueur(1,i)"
+               style="display:block;text-align: center">
+      <ion-icon name="person" style="display:block;"></ion-icon>
+      <span style="font-size: 10px;">{{ equipe1[i]['name'] }}</span>
+    </ion-label>
+  </ion-item>
+
+  <ion-item *ngIf="typeRecherche == 'gagne'">
+    <ion-label *ngIf="typeRecherche == 'gagne'" color="dark" style="display:block;text-align: center">
+      <ion-icon name="people" style="display:block;"></ion-icon>
+      <span style="font-size: 10px;">Equipe gagnante</span>
+    </ion-label>
+  </ion-item>
+
+  <ion-label>Equipe 2 :</ion-label>
+  <ion-item>
+    <ion-label color="dark" *ngFor="let joueurEquipe2 of equipe2; let y = index" (click)="changeNomJoueur(2,y)"
+               style="display:block;text-align: center">
+      <ion-icon name="person" style="display:block;"></ion-icon>
+      <span style="font-size: 10px;">{{ equipe2[y]['name'] }}</span>
+    </ion-label>
+  </ion-item>
+
+  <ion-label>Condition de Victoire :</ion-label>
+  <ion-segment [(ngModel)]="victoire" color="primary">
+    <ion-segment-button value="nbBut">
+      Nombre de But
+    </ion-segment-button>
+    <ion-segment-button value="duree">
+      Duree
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-label *ngIf="victoire == 'nbBut'">Nombre de But Max :</ion-label>
+  <ion-label *ngIf="victoire == 'duree'">Duree max du match :</ion-label>
+  <ion-item>
+    <ion-label color="primary" *ngIf="victoire == 'duree'">
+      min :
+    </ion-label>
+    <ion-label color="primary" *ngIf="victoire == 'nbBut'">
+      buts :
+    </ion-label>
+    <ion-input *ngIf="victoire" [(ngModel)]="conditoinVictoire" type="number" color="dark"></ion-input>
+  </ion-item>
+
+
+  <button ion-button full (click)="createMatch()"> Jouer Le Match</button>
 </ion-content>
