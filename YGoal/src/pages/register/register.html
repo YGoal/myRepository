@@ -1,22 +1,26 @@
 <ion-content class="gradientapp">
-  <button (click)="verslogin()"><ion-icon name="close"></ion-icon></button>
+  <button ion-button outline color="light" round style="position: absolute;left: 0px;height: 20px;width: 20px;padding: 0" navPop><ion-icon name="close"></ion-icon></button>
   <div class="centertext">
-    <div style="width: 100px; margin: auto;margin-top: 20px">
-      <img src="../../assets/imgs/logo_YGOAL-02.png" style="height: 110px">
+    <div style="margin: auto;margin-top: 20px">
+      <img src="../../assets/imgs/logo_YGOAL-02.png" style="height: 90px">
     </div>
     <div class="inscription">INSCRIPTION</div>
-    <ion-item class="identifiant2">
+    <div class="photoid">
+      <ion-item class="identifiantphoto">
 
-    </ion-item>
-    <ion-item class="identifiant">
-      <ion-input type="text" [(ngModel)]="user.name" placeholder="Prénom" clearInput></ion-input>
-    </ion-item>
-    <ion-item class="identifiant">
-      <ion-input type="text" [(ngModel)]="user.lastname" placeholder="Nom" clearInput></ion-input>
-    </ion-item>
-    <ion-item class="identifiant">
-      <ion-input type="text" [(ngModel)]="user.nickname" placeholder="Pseudo" clearInput></ion-input>
-    </ion-item>
+      </ion-item>
+      <div class="important">
+        <ion-item class="identifiant3">
+          <ion-input type="text" [(ngModel)]="user.name" placeholder="Prénom" clearInput></ion-input>
+        </ion-item>
+        <ion-item class="identifiant3">
+          <ion-input type="text" [(ngModel)]="user.lastname" placeholder="Nom" clearInput></ion-input>
+        </ion-item>
+        <ion-item class="identifiant3">
+          <ion-input type="text" [(ngModel)]="user.nickname" placeholder="Pseudo" clearInput></ion-input>
+        </ion-item>
+      </div>
+    </div>
     <ion-item class="identifiant">
       <ion-icon name="ios-mail-outline" item-start></ion-icon>
       <ion-input type="email" [(ngModel)]="user.email" placeholder="E-mail" clearInput></ion-input>
@@ -27,12 +31,12 @@
     </ion-item>
     <ion-item class="identifiant">
       <ion-icon name="ios-lock-outline" item-start></ion-icon>
-      <ion-input type="password" [(ngModel)]="user.password" placeholder="Confirmation mot de passe" clearInput></ion-input>
+      <ion-input type="password" [(ngModel)]="user.password" placeholder="Confirmation" clearInput></ion-input>
     </ion-item>
 
     <button ion-button (click)="register(user)" color="grey" class="log" style="border-radius: 10px">CREER UN COMPTE</button>
-    <div style="color: #f4f4f4;margin: auto;margin-top: 40px;">
-      ou s'inscrire via les réseaux
+    <div style="color: #f4f4f4;margin: auto;margin-top: 8px;">
+      s'inscrire via les réseaux
     </div>
     <div class="sonetwork">
       <ion-icon name="logo-facebook" style="font-size: 60px;margin-left: 15%"></ion-icon>

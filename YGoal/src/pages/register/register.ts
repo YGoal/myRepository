@@ -31,8 +31,4 @@ export class RegisterPage {
       console.error(e);
     }
   }
-
-  verslogin() {
-    this.navCtrl.push('RegisterPage');
-  }
 }

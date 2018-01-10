@@ -17,16 +17,22 @@ page-register {
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     width: 300px;
   }
-  .identifiant2{
+  .identifiantphoto{
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
     width: 100px;
     height: 100px;
+    flex:1;
+  }
+  .identifiant3{
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-bottom: 5px;
   }
   .item-inner {
     border-bottom-color: transparent !important;
@@ -44,4 +50,14 @@ page-register {
     justify-content: space-around;
     display: flex;
   }
+  .photoid{
+    margin: auto;
+    width: 300px;
+    display: flex;
+   }
+  .important{
+    flex:2;
+    margin-left: 5px;
+  }
+
 }
