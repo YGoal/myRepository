@@ -1,5 +1,5 @@
 <ion-content class="gradientapp">
-  <button ion-button outline color="light" round style="position: absolute;left: 0px;height: 20px;width: 20px;padding: 0" navPop><ion-icon name="close"></ion-icon></button>
+  <button ion-button outline color="light" round style="position: absolute;left: 10px;top: 5px;height: 20px;width: 20px;padding: 0" navPop><ion-icon name="close"></ion-icon></button>
   <div class="centertext">
     <div style="margin: auto;margin-top: 20px">
       <img src="../../assets/imgs/logo_YGOAL-02.png" style="height: 90px">
@@ -31,7 +31,7 @@
     </ion-item>
     <ion-item class="identifiant">
       <ion-icon name="ios-lock-outline" item-start></ion-icon>
-      <ion-input type="password" [(ngModel)]="user.password" placeholder="Confirmation" clearInput></ion-input>
+      <ion-input type="password" [(ngModel)]="user.confpassword" placeholder="Confirmation" clearInput></ion-input>
     </ion-item>
 
     <button ion-button (click)="register(user)" color="grey" class="log" style="border-radius: 10px">CREER UN COMPTE</button>
