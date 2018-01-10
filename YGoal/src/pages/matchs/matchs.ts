@@ -42,6 +42,12 @@ export class MatchsPage {
     if (this.typeRecherche == 'creation') {
       let nbJoueurEqupe1 = Math.floor((this.nbJoueur / 2 + this.nbJoueur % 2));
       let nbJoueurEqupe2 = Math.floor((this.nbJoueur / 2));
+      if (this.nbJoueur == 1) {
+        nbJoueurEqupe1 = 1;
+        nbJoueurEqupe2 = 1;
+        this.nbJoueur = 2;
+      }
+
       for (let i = 0; i < nbJoueurEqupe1; i++) {
         this.equipe1.push({
           player: i,
@@ -56,7 +62,7 @@ export class MatchsPage {
       }
     } else {
       let nbJoueurEqupe2;
-      if(this.nbJoueur < 5){
+      if (this.nbJoueur < 5) {
         nbJoueurEqupe2 = this.nbJoueur;
       } else {
         nbJoueurEqupe2 = 4;
@@ -65,7 +71,7 @@ export class MatchsPage {
       for (let i = 0; i < nbJoueurEqupe2; i++) {
         this.equipe2.push({
           player: i,
-          name: "Joueur " + (<number>i  + <number>1)
+          name: "Joueur " + (<number>i + <number>1)
         })
       }
     }
@@ -74,7 +80,7 @@ export class MatchsPage {
 
   changeNomJoueur(equipe, numero) {
     let alert = this.alertCtrl.create({
-      title: 'Changement de Nom',
+      title: "Changer le nom d'un joueur",
       inputs: [
         {
           name: 'nom',
@@ -83,19 +89,19 @@ export class MatchsPage {
       ],
       buttons: [
         {
-          text: 'Changement de Nom',
+          text: 'Cancel',
+          role: 'cancel',
+          handler: data => {
+          }
+        },
+        {
+          text: 'Changer le nom',
           handler: data => {
             if (equipe === 1) {
               this.equipe1[numero]['name'] = data['nom'];
             } else if (equipe === 2) {
               this.equipe2[numero]['name'] = data['nom'];
             }
-          }
-        },
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          handler: data => {
           }
         }
       ]

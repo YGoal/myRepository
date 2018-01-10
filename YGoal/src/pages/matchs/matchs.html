@@ -10,7 +10,7 @@
 
   <h1 class="title">Match</h1>
 
-  <ion-segment [(ngModel)]="typeRecherche" color="primary">
+  <ion-segment [(ngModel)]="typeRecherche" color="light">
     <ion-segment-button (click)="onNbJoueurChange()" value="creation">
       Creer un Match
     </ion-segment-button>
@@ -59,7 +59,7 @@
   </ion-item>
 
   <ion-label>Condition de Victoire :</ion-label>
-  <ion-segment [(ngModel)]="victoire" color="primary">
+  <ion-segment [(ngModel)]="victoire" color="light">
     <ion-segment-button value="nbBut">
       Nombre de But
     </ion-segment-button>
@@ -71,15 +71,15 @@
   <ion-label *ngIf="victoire == 'nbBut'">Nombre de But Max :</ion-label>
   <ion-label *ngIf="victoire == 'duree'">Duree max du match :</ion-label>
   <ion-item class="inputConditionVictoire">
-    <ion-label *ngIf="victoire == 'duree'">
+    <ion-label *ngIf="victoire == 'duree'" color="light">
       min :
     </ion-label>
-    <ion-label *ngIf="victoire == 'nbBut'">
+    <ion-label *ngIf="victoire == 'nbBut'" color="light">
       buts :
     </ion-label>
     <ion-input *ngIf="victoire" [(ngModel)]="conditoinVictoire" type="number"></ion-input>
   </ion-item>
 
 
-  <button ion-button full (click)="createMatch()"> Jouer Le Match</button>
+  <button ion-button full (click)="createMatch()" color="light"> Jouer Le Match</button>
 </ion-content>
