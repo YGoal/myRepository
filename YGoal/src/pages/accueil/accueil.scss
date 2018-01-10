@@ -1,3 +1,47 @@
-page-accueil {
 
+page-accueil{
+  text-align: center;
+  font-size: 16px;
+}
+h1,h2,h3,h4,h5,h6,ion-label,ion-range *,td,ul,li,a{
+  color: whitesmoke;
+}
+
+table{
+  text-align: center;
+}
+
+.table-score{
+  width: 100%;
+}
+.img-td{
+  width: 100px;
+}
+.img-td span{
+  padding-top: 10px;
+}
+.table-score td{
+  padding: 5px;
+}
+
+.img-logo{
+  max-height: 125px;
+  max-width: 125px;
+}
+.left-triangle{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 1px transparent solid;
+  border-right: #f4f4f4 40px solid;
+  margin: 7px;
+}
+
+.right-triangle{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 1px transparent solid;
+  border-left: #f4f4f4 40px solid;
+  margin: 7px;
 }

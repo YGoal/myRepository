@@ -45,7 +45,6 @@ export class MatchsPage {
       if (this.nbJoueur == 1) {
         nbJoueurEqupe1 = 1;
         nbJoueurEqupe2 = 1;
-        this.nbJoueur = 2;
       }
 
       for (let i = 0; i < nbJoueurEqupe1; i++) {
