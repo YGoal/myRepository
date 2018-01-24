@@ -57,8 +57,8 @@ export class MatchProvider {
   }
 
   getMatchById(id) {
-    return this.database.list("Match", ref => ref.orderByChild('id').equalTo(id))
-      .snapshotChanges();
+    return this.database.list("Match/"+id)
+      .valueChanges();
   }
 
   getMatchsByStatut(statut: number) {

@@ -15,11 +15,14 @@ import {MatchProvider} from "../../providers/match/match";
   templateUrl: 'accueil.html',
 })
 export class AccueilPage {
-  actualMatch;
+  actualMatch = [];
 
   constructor(public navCtrl: NavController, public matchProvider: MatchProvider, public navParams: NavParams) {
-    this.actualMatch = matchProvider.getMatchById("-L0yUez3Vnm9y5MGy2rb");
-    console.error(this.actualMatch);
+    let t = matchProvider.getMatchById("-L0yUez3Vnm9y5MGy2rb");
+    t.subscribe((value) => {
+      this.actualMatch = value;
+      console.error(value);
+    });
   }
 
   ionViewDidLoad() {
