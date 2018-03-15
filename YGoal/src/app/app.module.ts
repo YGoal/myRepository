@@ -33,6 +33,11 @@ import {FIREBASE_CONFIG} from "./app.firebase.config";
 import {MatchProvider} from '../providers/match/match';
 import {BabyProvider} from '../providers/baby/baby';
 
+import {FileTransfer, FileTransferObject, FileUploadOptions} from "@ionic-native/file-transfer";
+import {File} from "@ionic-native/file";
+import {Camera} from "@ionic-native/camera";
+
+
 
 @NgModule({
   declarations: [
@@ -79,7 +84,11 @@ import {BabyProvider} from '../providers/baby/baby';
     UserProvider,
     LogoComponent,
     MatchProvider,
-    BabyProvider
+    BabyProvider,
+    FileTransfer,
+    FileTransferObject,
+    File,
+    Camera,
   ]
 })
 export class AppModule {

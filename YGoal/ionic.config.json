@@ -1,6 +1,6 @@
 {
   "name": "tutoapp",
-  "app_id": "3ce355af",
+  "app_id": "e9ebbdaf",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
