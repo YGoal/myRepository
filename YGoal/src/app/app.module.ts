@@ -8,7 +8,7 @@ import {ContactPage} from '../pages/contact/contact';
 import {ArchivedTodosPage} from '../pages/archived-todos/archived-todos';
 import {HomePage} from '../pages/home/home';
 import {LoginPage} from '../pages/login/login';
-import {RegisterPage} from '../pages/register/register';
+// import {RegisterPage} from '../pages/register/register';
 import {TabsPage} from '../pages/tabs/tabs';
 import {TodoService} from '../providers/todo/todo';
 import {Dialogs} from '@ionic-native/dialogs';
