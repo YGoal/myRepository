@@ -17,17 +17,21 @@ export class BabyProvider {
   }
 
   add(object) {
-    this.database.list('Baby').push({
+    this.database.list('Baby').push([{
       adresse: object["adresse"],
       nom: object["nom"],
+      matchEnCour: object["matchEnCour"],
+      fileAttente: object["fileAttente"],
       nbPlacesMax: object["nbPlacesMax"]
-    });
+    }]);
   }
 
   update(id, object) {
     this.database.object("Baby/" + id).update({
       adresse: object["adresse"],
       nom: object["nom"],
+      matchEnCour: object["matchEnCour"],
+      fileAttente: object["fileAttente"],
       nbPlacesMax: object["nbPlacesMax"]
     });
   }
@@ -38,20 +42,20 @@ export class BabyProvider {
 
   getAllBaby() {
     return this.database.list("Baby")
-      .snapshotChanges()
+      .valueChanges()
   }
 
   getBabyById(id) {
-    return this.database.list("Baby", ref => ref.orderByChild('id').equalTo(id))
-      .snapshotChanges();
+    return this.database.list("Baby/"+id)
+      .valueChanges();
   }
   getBabyByName(name) {
     return this.database.list("Baby", ref => ref.orderByChild('nom').equalTo(name))
-      .snapshotChanges();
+      .valueChanges();
   }
   getBabyByAdresse(adresse) {
     return this.database.list("Baby", ref => ref.orderByChild('adresse').equalTo(adresse))
-      .snapshotChanges();
+      .valueChanges();
   }
 }
 
@@ -68,20 +72,27 @@ export class BabyProvider {
 //     nbPlacesMax: 888888
 //   })
 // }
+
 // addBaby() {
-//   this.baby.add({
+//   this.add({
 //     adresse: "27 rue raoul servant",
 //     nom: "YNOV LYON",
+//     matchEnCour: "-L0xeRotPxsNt7ButDfc",
+//     fileAttente: ["-L0xWKQWGM5aVpOjV8Hy"],
 //     nbPlacesMax: 4
 //   });
-//   this.baby.add({
+//   this.add({
 //     adresse: "27 rue raoul servant",
 //     nom: "YNOV LYON 2",
+//     matchEnCour: "-L0xeRotPxsNt7ButDfc",
+//     fileAttente: ["-L0xWKQWGM5aVpOjV8Hy"],
 //     nbPlacesMax: 4
 //   });
-//   this.baby.add({
+//   this.add({
 //     adresse: "27 rue raoul servant",
 //     nom: "YNOV LYON 3",
+//     matchEnCour: "-L0xeRotPxsNt7ButDfc",
+//     fileAttente: ["-L0xWKQWGM5aVpOjV8Hy"],
 //     nbPlacesMax: 4
 //   });
 // }

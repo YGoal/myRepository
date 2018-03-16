@@ -15,15 +15,14 @@ $colors: (
 );
 .gradientapp{
   background-color: transparent;
-  background: linear-gradient(#212849,#1c3661,#4cc2f1);
+  background: linear-gradient(#212849,#1c3661,#006EA3);
 }
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 .title{
-  font-family: "gloryunited";
+  font-family: 'Poppins', sans-serif;
   letter-spacing: 3px;
-}
-@font-face {
-  font-family: "gloryunited";
-  src: url('../assets/fonts/Glory_United.otf');
 }
 
 @import "ionic.theme.default";

@@ -32,8 +32,13 @@ import {LogoComponent} from "../components/logo/logo";
 import {FIREBASE_CONFIG} from "./app.firebase.config";
 import {MatchProvider} from '../providers/match/match';
 import {BabyProvider} from '../providers/baby/baby';
+import { MenuComponent } from '../components/menu/menu';
+import {AccueilPage} from "../pages/accueil/accueil";
+import {MatchsPage} from "../pages/matchs/matchs";
+import { QRScanner } from '@ionic-native/qr-scanner';
+import { PropertiesProvider } from '../providers/properties/properties';
 
-import {FileTransfer, FileTransferObject, FileUploadOptions} from "@ionic-native/file-transfer";
+import {FileTransfer, FileTransferObject} from "@ionic-native/file-transfer";
 import {File} from "@ionic-native/file";
 import {Camera} from "@ionic-native/camera";
 
@@ -44,12 +49,16 @@ import {Camera} from "@ionic-native/camera";
     MyApp,
     AboutPage,
     ContactPage,
+    AccueilPage,
+    LoginPage,
     ArticlePage,
     HomePage,
+    MatchsPage,
     TabsPage,
     LoginPage,
     ArchivedTodosPage,
     ProductDetailsPage,
+    MenuComponent,
     LogoComponent
   ],
   imports: [
@@ -67,8 +76,11 @@ import {Camera} from "@ionic-native/camera";
     MyApp,
     AboutPage,
     ContactPage,
+    LoginPage,
+    AccueilPage,
     ArticlePage,
     HomePage,
+    MatchsPage,
     LoginPage,
     TabsPage,
     ArchivedTodosPage,
@@ -79,12 +91,17 @@ import {Camera} from "@ionic-native/camera";
     TodoService,
     StatusBar,
     Dialogs,
+    QRScanner,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserProvider,
     LogoComponent,
     MatchProvider,
     BabyProvider,
+    PropertiesProvider
+  ],
+  exports:[
+    MenuComponent,
     FileTransfer,
     FileTransferObject,
     File,

@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import { NavController, NavParams} from 'ionic-angular';
 import {UserProvider} from "../../providers/user/user";
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Dialogs } from '@ionic-native/dialogs';
+import { AccueilPage } from '../accueil/accueil';
 
 /**
  * Generated class for the LoginPage page.
@@ -11,14 +12,11 @@ import { Dialogs } from '@ionic-native/dialogs';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
-
 
   user = {} as UserProvider;
 
@@ -32,7 +30,7 @@ export class LoginPage {
       console.log(result);
 
       if (result) {
-        this.navCtrl.push('AccueilPage');
+        this.navCtrl.setRoot(AccueilPage);
       } else {
         this.dialogs.alert('Email ou mot de passe incorrect')
           .then(() => console.log('Dialog dismissed'))

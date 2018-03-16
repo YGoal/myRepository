@@ -71,15 +71,15 @@ export class RegisterPage {
   }
 
   private uploadPhoto(): void {
-    var randomString = function(length) {
-      var text = "";
-      var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-      for(var i = 0; i < length; i++) {
+    let randomString = function(length) {
+      let text = "";
+      let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      for(let i = 0; i < length; i++) {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
       }
       return text;
-    }
-    var picname = "img-" + randomString(8) + ".png";
+    };
+    let picname = "img-" + randomString(8) + ".png";
     this.myPhotosRef.child(picname)
       .putString(this.myPhoto, 'base64', { contentType: 'image/png' })
       .then((savedPicture) => {
@@ -107,5 +107,4 @@ export class RegisterPage {
     });
     alert.present();
   }
-
 }

@@ -3,12 +3,81 @@ page-accueil{
   text-align: center;
   font-size: 16px;
 }
-h1,h2,h3,h4,h5,h6,ion-label,ion-range *,td,ul,li,a{
+ion-label,ion-range *,td,ul,li,a,.colorWhite{
   color: whitesmoke;
+}
+
+h1,h2,h3,h4,h5,h6,.colorBlue{
+  color: #1ACAC8;
 }
 
 table{
   text-align: center;
+}
+
+.listeSansPuce li{
+  list-style: none;
+  font-size: 0.75em;
+  padding: 0;
+}
+
+.listeSansPuce{
+  margin: 0;
+  padding: 0;
+}
+
+.listeSansPuce li div:first-child{
+  display: inline-flex;
+}
+.listeSansPuce li div:first-child div{
+  padding: 1px 5px;
+}
+
+.listTable{
+  display: flex;
+  margin-top: 20px;
+  padding: 0;
+}
+.listTable div{
+  padding: 5px;
+}
+.listTable div *{
+  padding: 0;
+}
+.listTable div:last-child{
+  border-left: 1px solid white;
+}
+.listTable div:last-child *{
+  border-left: none;
+}
+
+.titreMatchEnCour{
+  border: 1px solid #1ACAC8;
+  color: whitesmoke;
+  background-color: #56607B;
+  margin: 0;
+  margin-top: 20px;
+  padding: 10px;
+}
+.tableMatchEnCour{
+  border: 1px solid #1ACAC8;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  background-color: #0D2B4D;
+}
+.tableMatchEnCour tr:first-child td{
+  padding-top: 10px;
+}
+.tableMatchEnCour tr td:first-child{
+  padding-left: 10px;
+}
+.tableMatchEnCour tr td:last-child{
+  padding-right: 10px;
+}
+.tableMatchEnCour tr td h1{
+  padding: 0;
+  margin: 0;
 }
 
 .table-score{
@@ -25,23 +94,16 @@ table{
 }
 
 .img-logo{
-  max-height: 125px;
-  max-width: 125px;
-}
-.left-triangle{
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border: 1px transparent solid;
-  border-right: #f4f4f4 40px solid;
-  margin: 7px;
+  max-height: 50px;
+  max-width: 50px;
 }
 
-.right-triangle{
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border: 1px transparent solid;
-  border-left: #f4f4f4 40px solid;
-  margin: 7px;
+.greyButton{
+  font-size: 1em;
+  padding: 10px 15%;
+  margin: 20px;
+  color:#1C1E1D;
+  background-color: #BBC8D8;
+  border: none;
+  border-radius: 50px;
 }
