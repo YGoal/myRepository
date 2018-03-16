@@ -1,21 +1,23 @@
-import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {Component, ViewChild} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
 import {MatchProvider} from "../../providers/match/match";
 import {AlertController} from 'ionic-angular';
+import {MenuComponent} from "../../components/menu/menu";
 
+import { PropertiesProvider } from "../../providers/properties/properties";
 /**
  * Generated class for the MatchsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
-@IonicPage()
 @Component({
   selector: 'page-matchs',
   templateUrl: 'matchs.html',
 })
 export class MatchsPage {
+
+  @ViewChild(MenuComponent) menuTabs;
 
   victoire;
   nbJoueur;
@@ -25,7 +27,7 @@ export class MatchsPage {
   typeRecherche;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public matchProvider: MatchProvider, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public matchProvider: MatchProvider, private alertCtrl: AlertController, private properties: PropertiesProvider) {
     this.conditoinVictoire = 10;
     this.nbJoueur = 2;
     this.victoire = "nbBut";
@@ -109,18 +111,18 @@ export class MatchsPage {
   }
 
   createMatch() {
-    this.matchProvider.add({
-
-      typeRecherche: this.typeRecherche,
-      idBaby: 999,
-      score1: 0,
-      score2: 0,
-      equipe1: this.equipe1,
-      equipe2: this.equipe2,
-      typeVictoire: this.victoire,
-      conditionVictoire: this.conditoinVictoire,
-      statut: 0
-    });
+    if(this.properties.idBaby != undefined){
+      this.matchProvider.add({
+        typeRecherche: this.typeRecherche,
+        idBaby: this.properties.idBaby,
+        score1: 0,
+        score2: 0,
+        equipe1: this.equipe1,
+        equipe2: this.equipe2,
+        typeVictoire: this.victoire,
+        conditionVictoire: this.conditoinVictoire,
+        statut: 0
+      });
+    }
   }
-
 }

@@ -19,7 +19,7 @@ export class MatchProvider {
   }
 
   add(object) {
-    this.database.list('Match').push({
+    this.database.list('Match').push([{
       date:Date.now(),
       idBaby: object["idBaby"],
       typeRecherche: object["typeRecherche"],
@@ -29,12 +29,13 @@ export class MatchProvider {
       equipe2: object["equipe2"],
       typeVictoire: object["typeVictoire"],
       conditionVictoire: object["conditionVictoire"],
-      statut: object["statut"]
-    });
+      statut: object["statut"],
+      idStatut: object["idBaby"]  + "~0",
+    }]);
   }
 
   update(id, object) {
-    this.database.object("Match/" + id).update({
+    this.database.object("Match/" + id).update([{
       idBaby: object["idBaby"],
       typeRecherche: object["typeRecherche"],
       score1: object["score1"],
@@ -43,8 +44,9 @@ export class MatchProvider {
       equipe2: object["equipe2"],
       typeVictoire: object["typeVictoire"],
       conditionVictoire: object["conditionVictoire"],
-      statut: object["statut"]
-    });
+      statut: object["statut"],
+      idStatut: object["idBaby"]  + "~" + String(object["statut"]),
+    }]);
   }
 
   remove(id) {
@@ -62,15 +64,18 @@ export class MatchProvider {
   }
 
   getMatchsByStatut(statut: number) {
-    return this.database.list("Match", ref => ref.orderByChild('statut').equalTo(statut))
-      .snapshotChanges();
+    return this.database.list("Match", ref => ref.orderByChild('0/statut').equalTo(statut))
+      .valueChanges();
+  }
+  getMatchsByIdStatut(idStatut: string) {
+    return this.database.list("Match", ref => ref.orderByChild('0/idStatut').equalTo(idStatut))
+      .valueChanges();
   }
 
   getMatchsByIdBaby(idBaby) {
-    return this.database.list("Match", ref => ref.orderByChild('idBaby').equalTo(idBaby))
-      .snapshotChanges();
+    return this.database.list("Match", ref => ref.orderByChild('0/idBaby').equalTo(idBaby))
+      .valueChanges();
   }
-
 }
 
 //

@@ -5,37 +5,75 @@
   Ionic pages and navigation.
 -->
 
-<ion-content padding class="gradientapp">
+<ion-content padding class="gradientapp" (swipeleft)="menuTabs.swipeLeft($event)"
+             (swiperight)="menuTabs.swipeRight($event)">
 
   <img class="img-logo" src="./assets/imgs/logo_YGOAL-02.png">
 
-  <h4 class="title"> <span class="left-triangle" ></span> Match en cours <span class="right-triangle" ></span></h4>
+  <p>{{baby.matchEnCour}}</p>
 
-  <table class="table-score">
+  <button *ngIf="properties.idBaby == null" ion-button full (click)="importBabyId()" color="light">
+    Scan QR Code
+  </button>
+
+  <h4 *ngIf="properties.idBaby != null && isBabyUse" class="title titreMatchEnCour"> Match en cours </h4>
+
+  <table *ngIf="properties.idBaby != null && isBabyUse" class="table-score tableMatchEnCour">
     <tr>
       <td class="img-td">
-        <div style="width: 100px;height: 100px;color: #222222;background-color: #f4f4f4">img</div>
-        <span>Equipe 1</span>
+        <div style="color: #222222;">
+          <ion-icon name="people" style="color: #0071BC;font-size: 4em;"></ion-icon>
+        </div>
       </td>
       <td>
-        <h2>{{this.actualMatch[4]}} - {{this.actualMatch[5]}}</h2>
+        <h1 class="colorWhite">{{this.actualMatch.score1}} - {{this.actualMatch.score2}}</h1>
       </td>
       <td class="img-td">
-        <div style="width: 100px;height: 100px;color: #222222;background-color: #f4f4f4">img</div>
-        <span>Equipe 2</span>
+        <div style="color: #222222;">
+          <ion-icon name="people" style="color: #AF0000;font-size: 4em;"></ion-icon>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="img-td" colspan="3">
+        <h1 class="colorWhite">...</h1>
       </td>
     </tr>
   </table>
 
-  <button (click)="goTo('MatchsPage')" ion-button color="light">Création de match</button>
+  <h2 *ngIf="!isBabyUse"> Pas De Match Actif </h2>
 
-  <h4 class="title"> <span class="left-triangle" ></span> Regle Bistrot <span class="right-triangle" ></span> </h4>
-  <ul>
-    <li> Pissette Interdite </li>
-    <li> Roulette non exessive </li>
-    <li> Gamelle +1 ou -1  </li>
-  </ul>
+  <button *ngIf="properties.idBaby != null" class="greyButton" (click)="goToMatchCrea()">JOUER UN MATCH</button>
+  <div [ngClass]="{'listTable' : isBabyUse == true}">
+    <div *ngIf="properties.idBaby != null && isBabyUse">
+      <h6 class="title"> Fil D'Attente </h6>
+      <ul class="listeSansPuce">
+        <li *ngFor=""> Equipe 1</li>
+      </ul>
+    </div>
+    <div *ngIf="properties.idBaby != null">
+      <h6 class="title"> Historique match </h6>
+      <ul class="listeSansPuce">
+        <li *ngFor="let m of history;let i=index">
+          <div *ngIf="i < 3"><div> {{m[0].equipe1[0].name}} </div><div>{{m[0].score1}}-{{m[0].score2}}</div><div> {{m[0].equipe2[0].name}}</div></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top: 20px" class="">
+    <div>
+      <h6 class="title"> Regle Bistrot </h6>
+      <ul class="listeSansPuce">
+        <li> Pissette Interdite</li>
+        <li> Roulette non exessive</li>
+        <li> Gamelle +1 ou -1</li>
+        <li>
+          <a href="https://www.supreme.fr/regle_baby_bistrot/"> Lien réglement </a>
+        </li>
+      </ul>
+    </div>
+    <div></div>
+  </div>
 
-  <a href="https://www.babyfootvintage.com/content/13-les-regles-du-jeu-officielles-du-baby-foot"> Lien réglement </a>
-
+  <menu-tabs page="accueil"></menu-tabs>
 </ion-content>
