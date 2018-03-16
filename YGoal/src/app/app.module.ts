@@ -38,6 +38,11 @@ import {MatchsPage} from "../pages/matchs/matchs";
 import { QRScanner } from '@ionic-native/qr-scanner';
 import { PropertiesProvider } from '../providers/properties/properties';
 
+import {FileTransfer, FileTransferObject} from "@ionic-native/file-transfer";
+import {File} from "@ionic-native/file";
+import {Camera} from "@ionic-native/camera";
+
+
 
 @NgModule({
   declarations: [
@@ -97,6 +102,10 @@ import { PropertiesProvider } from '../providers/properties/properties';
   ],
   exports:[
     MenuComponent,
+    FileTransfer,
+    FileTransferObject,
+    File,
+    Camera,
   ]
 })
 export class AppModule {
