@@ -7,15 +7,15 @@
     <div class="inscription">INSCRIPTION</div>
     <div class="photoid">
       <ion-item class="identifiantphoto" (click)="choice()">
-        <div style="height:100px;width:100px; display:flex;">
+        <div style="height:115px;width:115px; display:flex">
           <img src="{{ myPhotoURL }}"/>
         </div>
       </ion-item>
       <div class="important">
-        <ion-item class="identifiant3">
+        <ion-item class="identifiant3" style="border-bottom: solid grey 0.2px;">
           <ion-input type="text" [(ngModel)]="user.name" placeholder="Prénom" clearInput></ion-input>
         </ion-item>
-        <ion-item class="identifiant3">
+        <ion-item class="identifiant3" style="border-bottom: solid grey 0.2px;">
           <ion-input type="text" [(ngModel)]="user.lastname" placeholder="Nom" clearInput></ion-input>
         </ion-item>
         <ion-item class="identifiant3">

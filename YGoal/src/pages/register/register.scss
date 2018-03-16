@@ -25,14 +25,11 @@ page-register {
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
-    width: 130px;
-    height: 130px;
+    width: 145px;
+    height: 145px;
+    color:black;
   }
   .identifiant3{
-    border-radius: 10px;
-    margin-right: 20px;
-    margin-bottom: 5px;
     height: 45px;
   }
   .item-inner {
@@ -55,10 +52,14 @@ page-register {
     margin: auto;
     width: 80%;
     display: flex;
+    margin-bottom: 20px;
    }
   .important{
+    background-color: #f4f4f4;
     flex:2;
     margin-left: 5px;
+    border-radius: 10px;
+    border: solid white;
   }
   .contact{
     font-size: 100px;

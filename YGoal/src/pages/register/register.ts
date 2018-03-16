@@ -23,7 +23,7 @@ export class RegisterPage {
               public navCtrl: NavController,
               public navParams: NavParams,
               private camera: Camera,
-              public alertCtrl: AlertController,
+              private alertCtrl: AlertController
               ) {
     this.myPhotoURL = "assets/imgs/bonhomme.jpg";
     this.myPhotosRef = firebase.storage().ref('/Photos/');
