@@ -8,7 +8,6 @@ import {ContactPage} from '../pages/contact/contact';
 import {ArchivedTodosPage} from '../pages/archived-todos/archived-todos';
 import {HomePage} from '../pages/home/home';
 import {LoginPage} from '../pages/login/login';
-// import {RegisterPage} from '../pages/register/register';
 import {TabsPage} from '../pages/tabs/tabs';
 import {TodoService} from '../providers/todo/todo';
 import {Dialogs} from '@ionic-native/dialogs';
@@ -32,6 +31,12 @@ import {LogoComponent} from "../components/logo/logo";
 import {FIREBASE_CONFIG} from "./app.firebase.config";
 import {MatchProvider} from '../providers/match/match';
 import {BabyProvider} from '../providers/baby/baby';
+import { MenuComponent } from '../components/menu/menu';
+import {AccueilPage} from "../pages/accueil/accueil";
+import {MatchsPage} from "../pages/matchs/matchs";
+import { QRScanner } from '@ionic-native/qr-scanner';
+import { PropertiesProvider } from '../providers/properties/properties';
+import {Camera} from "@ionic-native/camera";
 
 import {Facebook} from '@ionic-native/facebook';
 
@@ -42,12 +47,16 @@ import {Facebook} from '@ionic-native/facebook';
     MyApp,
     AboutPage,
     ContactPage,
+    AccueilPage,
+    LoginPage,
     ArticlePage,
     HomePage,
+    MatchsPage,
     TabsPage,
     LoginPage,
     ArchivedTodosPage,
     ProductDetailsPage,
+    MenuComponent,
     LogoComponent
   ],
   imports: [
@@ -65,8 +74,11 @@ import {Facebook} from '@ionic-native/facebook';
     MyApp,
     AboutPage,
     ContactPage,
+    LoginPage,
+    AccueilPage,
     ArticlePage,
     HomePage,
+    MatchsPage,
     LoginPage,
     TabsPage,
     ArchivedTodosPage,
@@ -77,13 +89,19 @@ import {Facebook} from '@ionic-native/facebook';
     TodoService,
     StatusBar,
     Dialogs,
+    QRScanner,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserProvider,
     LogoComponent,
     MatchProvider,
     BabyProvider,
-    Facebook
+    Facebook,
+    Camera,
+    PropertiesProvider
+  ],
+  exports:[
+    MenuComponent,
   ]
 })
 export class AppModule {

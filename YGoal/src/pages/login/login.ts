@@ -1,14 +1,12 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import { NavController, NavParams} from 'ionic-angular';
 import {UserProvider} from "../../providers/user/user";
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Dialogs } from '@ionic-native/dialogs';
 import {AccueilPage} from "../accueil/accueil";
 import {Facebook} from "@ionic-native/facebook";
 import {AlertController} from 'ionic-angular';
-
 import firebase from "firebase";
-
 
 
 /**
@@ -18,7 +16,6 @@ import firebase from "firebase";
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
@@ -66,6 +63,8 @@ export class LoginPage {
         case "auth/invalid-email":
           msg = 'Mail ou mot de passe invalide';
           break;
+
+
       }
       alert(msg);
     })

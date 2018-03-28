@@ -18,21 +18,19 @@ page-register {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
-    width: 300px;
+    width: 80%;
+    height: 45px;
   }
   .identifiantphoto{
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
-    width: 100px;
-    height: 100px;
-    flex:1;
+    width: 145px;
+    height: 145px;
+    color:black;
   }
   .identifiant3{
-    border-radius: 10px;
-    margin-right: 20px;
-    margin-bottom: 5px;
+    height: 45px;
   }
   .item-inner {
     border-bottom-color: transparent !important;
@@ -40,7 +38,7 @@ page-register {
   }
   .log{
     margin: auto;
-    width: 300px;
+    width: 80%;
   }
   .sonetwork{
     margin:auto;
@@ -52,12 +50,22 @@ page-register {
   }
   .photoid{
     margin: auto;
-    width: 300px;
+    width: 80%;
     display: flex;
+    margin-bottom: 20px;
    }
   .important{
+    background-color: #f4f4f4;
     flex:2;
     margin-left: 5px;
+    border-radius: 10px;
+    border: solid white;
   }
-
+  .contact{
+    font-size: 100px;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    display: block;
+  }
 }

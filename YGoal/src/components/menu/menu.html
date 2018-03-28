@@ -1,0 +1,4 @@
+
+<div class="container-menu">
+  <div *ngFor="let p of pages" [ngClass]="page == p.name ? 'border-white' : '' " (click)="goTo(p)"><img src="{{p.src}}"></div>
+</div>

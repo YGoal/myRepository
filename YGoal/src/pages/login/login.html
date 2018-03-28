@@ -1,7 +1,7 @@
 <ion-content class="gradientapp">
   <div class="centertext">
     <div style="margin: auto;margin-top: 20px">
-      <img src="../../assets/imgs/logo_YGOAL-02.png" style="height: 90px">
+      <img src="./assets/imgs/logo_YGOAL-02.png" style="height: 90px">
     </div>
     <div class="connexion">CONNEXION</div>
     <ion-item class="identifiant">
@@ -15,7 +15,7 @@
     <button ion-button (click)="login(user)" color="grey" class="log" style="border-radius: 10px">SE CONNECTER</button>
     <button ion-button (click)="showForgotPassword()" class="log" style="border-radius: 10px">Mot de passe oublié</button>
     <div class="oubli">Mot de passe oublié</div>
-    <div style="color: #f4f4f4;margin: auto;margin-top: 40px;">
+    <div style="color: #f4f4f4;margin: auto;margin-top: 30px;margin-bottom: 0;">
       ou se connecter via les réseaux
     </div>
     <div class="sonetwork">
@@ -24,10 +24,15 @@
       </button>
       <ion-icon name="logo-twitter" style="font-size: 60px"></ion-icon>
       <ion-icon name="logo-googleplus" style="font-size: 60px;margin-right: 15%"></ion-icon>
+
+      <ion-icon name="logo-facebook" style="font-size: 50px;margin-left: 15%"></ion-icon>
+      <ion-icon name="logo-twitter" style="font-size: 50px"></ion-icon>
+      <ion-icon name="logo-googleplus" style="font-size: 50px;margin-right: 15%"></ion-icon>
+
     </div>
     <footer class="register">
       Pas encore membre?<br>
-      <button ion-button color=shadow (click)="register()" style="width: 250px;margin: auto">Cliquez ici pour créer un compte</button>
+      <button ion-button color=shadow (click)="register()" style="width: 250px;margin-left: auto;margin-right: auto;">Cliquez ici pour créer un compte</button>
     </footer>
   </div>
 </ion-content>

@@ -1,19 +1,21 @@
 <ion-content class="gradientapp">
-  <button ion-button outline color="light" round style="position: absolute;left: 10px;top: 5px;height: 20px;width: 20px;padding: 0" navPop><ion-icon name="close"></ion-icon></button>
+  <button ion-button outline color="light" round style="position: absolute;left: 15px;top: 15px;height: 20px;width: 20px;padding: 0" navPop><ion-icon name="close"></ion-icon></button>
   <div class="centertext">
     <div style="margin: auto;margin-top: 20px">
       <img src="../../assets/imgs/logo_YGOAL-02.png" style="height: 90px">
     </div>
     <div class="inscription">INSCRIPTION</div>
     <div class="photoid">
-      <ion-item class="identifiantphoto">
-
+      <ion-item class="identifiantphoto" (click)="choice()">
+        <div style="height:115px;width:115px; display:flex">
+          <img src="{{ myPhotoURL }}"/>
+        </div>
       </ion-item>
       <div class="important">
-        <ion-item class="identifiant3">
+        <ion-item class="identifiant3" style="border-bottom: solid grey 0.2px;">
           <ion-input type="text" [(ngModel)]="user.name" placeholder="Prénom" clearInput></ion-input>
         </ion-item>
-        <ion-item class="identifiant3">
+        <ion-item class="identifiant3" style="border-bottom: solid grey 0.2px;">
           <ion-input type="text" [(ngModel)]="user.lastname" placeholder="Nom" clearInput></ion-input>
         </ion-item>
         <ion-item class="identifiant3">
@@ -34,7 +36,7 @@
       <ion-input type="password" [(ngModel)]="user.confpassword" placeholder="Confirmation" clearInput></ion-input>
     </ion-item>
 
-    <button ion-button (click)="register(user)" color="grey" class="log" style="border-radius: 10px">CREER UN COMPTE</button>
+    <button ion-button (click)="register(user)" color="grey" class="log" style="border-radius: 10px; height:50px; margin-top: 10px">CREER UN COMPTE</button>
     <div style="color: #f4f4f4;margin: auto;margin-top: 8px;">
       s'inscrire via les réseaux
     </div>
@@ -43,6 +45,5 @@
       <ion-icon name="logo-twitter" style="font-size: 60px"></ion-icon>
       <ion-icon name="logo-googleplus" style="font-size: 60px;margin-right: 15%"></ion-icon>
     </div>
-
   </div>
 </ion-content>

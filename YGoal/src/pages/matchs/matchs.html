@@ -6,7 +6,7 @@
 -->
 
 
-<ion-content padding class="gradientapp">
+<ion-content padding class="gradientapp" (swipeleft)="menuTabs.swipeLeft($event)" (swiperight)="menuTabs.swipeRight($event)">
 
   <h1 class="title">Match</h1>
 
@@ -81,5 +81,7 @@
   </ion-item>
 
 
-  <button ion-button full (click)="createMatch()" color="light"> Jouer Le Match</button>
+  <button *ngIf="properties.idBaby!=undefined" ion-button full (click)="createMatch()" color="light" class="margin-bot"> Jouer Le Match</button>
+  <button *ngIf="properties.idBaby==undefined" ion-button full disabled color="light" class="margin-bot"> Jouer Le Match</button>
+  <menu-tabs page="crea-match"></menu-tabs>
 </ion-content>
