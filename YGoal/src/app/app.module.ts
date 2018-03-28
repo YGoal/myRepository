@@ -33,6 +33,9 @@ import {FIREBASE_CONFIG} from "./app.firebase.config";
 import {MatchProvider} from '../providers/match/match';
 import {BabyProvider} from '../providers/baby/baby';
 
+import {Facebook} from '@ionic-native/facebook';
+
+
 
 @NgModule({
   declarations: [
@@ -79,7 +82,8 @@ import {BabyProvider} from '../providers/baby/baby';
     UserProvider,
     LogoComponent,
     MatchProvider,
-    BabyProvider
+    BabyProvider,
+    Facebook
   ]
 })
 export class AppModule {

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {getResponseURL} from "@angular/http/src/http_utils";
+import { AngularFireAuth } from 'angularfire2/auth';
 
 /*
   Generated class for the UserProvider provider.
@@ -14,13 +15,19 @@ const API: string = "https://ygoal-e23de.firebaseio.com/Users.json";
 export class UserProvider {
   public email;
   public password;
-  constructor(public http: Http) {
+  private auth: any;
+  constructor(public http: Http, private afAuth: AngularFireAuth) {
     console.log('Hello UserProvider Provider');
+    this.auth=afAuth;
   }
 
   getUsers(){
     return this.http.get(API)
       .map(response => response.json());
   }
+
+  /*forgotPasswordUser(email: any){
+    return this.afAuth.sendPasswordResetEmail(email);
+  }*/
 
 }
