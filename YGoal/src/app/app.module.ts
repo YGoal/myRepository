@@ -8,7 +8,6 @@ import {ContactPage} from '../pages/contact/contact';
 import {ArchivedTodosPage} from '../pages/archived-todos/archived-todos';
 import {HomePage} from '../pages/home/home';
 import {LoginPage} from '../pages/login/login';
-// import {RegisterPage} from '../pages/register/register';
 import {TabsPage} from '../pages/tabs/tabs';
 import {TodoService} from '../providers/todo/todo';
 import {Dialogs} from '@ionic-native/dialogs';
@@ -37,9 +36,6 @@ import {AccueilPage} from "../pages/accueil/accueil";
 import {MatchsPage} from "../pages/matchs/matchs";
 import { QRScanner } from '@ionic-native/qr-scanner';
 import { PropertiesProvider } from '../providers/properties/properties';
-
-import {FileTransfer, FileTransferObject} from "@ionic-native/file-transfer";
-import {File} from "@ionic-native/file";
 import {Camera} from "@ionic-native/camera";
 
 
@@ -98,14 +94,11 @@ import {Camera} from "@ionic-native/camera";
     LogoComponent,
     MatchProvider,
     BabyProvider,
+    Camera,
     PropertiesProvider
   ],
   exports:[
     MenuComponent,
-    FileTransfer,
-    FileTransferObject,
-    File,
-    Camera,
   ]
 })
 export class AppModule {
