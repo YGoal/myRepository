@@ -1,11 +1,12 @@
 import {Component, ViewChild} from '@angular/core';
-
 import {NavController, NavParams} from 'ionic-angular';
+
 import {MatchProvider} from "../../providers/match/match";
 import {BabyProvider} from "../../providers/baby/baby";
 import {MatchsPage} from "../matchs/matchs";
+import {QrReaderPage} from "../qr-reader/qr-reader";
+
 import {MenuComponent} from "../../components/menu/menu";
-import {QRScanner, QRScannerStatus} from '@ionic-native/qr-scanner';
 import {PropertiesProvider} from "../../providers/properties/properties";
 
 
@@ -27,9 +28,9 @@ export class AccueilPage {
   baby = {};
   history;
 
-  //@ViewChild(MenuComponent) menuTabs;
+  //@ViewChild(MenuComponent) private menuTabs : MenuComponent;
 
-  constructor(public navCtrl: NavController, public matchProvider: MatchProvider, public babyProvider: BabyProvider, public navParams: NavParams, private qrScanner: QRScanner, private properties: PropertiesProvider,) {
+  constructor(public navCtrl: NavController, public matchProvider: MatchProvider, public babyProvider: BabyProvider, public navParams: NavParams, private properties: PropertiesProvider) {
     this.actualMatch = {
       score1: 0,
       score2: 0,
@@ -40,32 +41,6 @@ export class AccueilPage {
     }
   }
 
-  importBabyId() {
-    // window.document.querySelector('ion-app').classList.add('transparentBody');
-    this.qrScanner.prepare()
-      .then((status: QRScannerStatus) => {
-        if (status.authorized) {
-          let scanSub = this.qrScanner.scan().subscribe((text: string) => {
-            this.properties.idBaby = text;
-            this.qrScanner.hide(); // hide camera preview
-            scanSub.unsubscribe(); // stop scanning
-            this.loadMatchs();
-          });
-          this.qrScanner.show();
-        } else if (status.denied) {
-          // window.document.querySelector('ion-app').classList.remove('transparentBody');
-        } else {
-          this.properties.idBaby = "-L7dm8OdqKWtOoKfJLhZ";
-          this.loadMatchs();
-          // window.document.querySelector('ion-app').classList.remove('transparentBody');
-        }
-      })
-      .catch((e: any) => {
-        console.error('Error is : ', e);
-        this.properties.idBaby = "-L7dm8OdqKWtOoKfJLhZ";
-        this.loadMatchs();
-      });
-  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AccueilPage');
@@ -82,6 +57,10 @@ export class AccueilPage {
     } else {
       return false;
     }
+  }
+
+  importBabyId(){
+    this.navCtrl.setRoot(QrReaderPage);
   }
 
   goToMatchCrea() {

@@ -25,6 +25,11 @@ $colors: (
   letter-spacing: 3px;
 }
 
+h1,h2{
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 3px;
+}
+
 @import "ionic.theme.default";
 @import "ionic.ionicons";
 @import "roboto";
