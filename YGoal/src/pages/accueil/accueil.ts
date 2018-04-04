@@ -26,7 +26,7 @@ export class AccueilPage {
   baby = {};
   history;
 
-  @ViewChild(MenuComponent) menuTabs;
+  //@ViewChild(MenuComponent) menuTabs;
 
   constructor(public navCtrl: NavController, public matchProvider: MatchProvider, public babyProvider: BabyProvider, public navParams: NavParams, private qrScanner: QRScanner, private properties: PropertiesProvider,) {
     this.actualMatch = {

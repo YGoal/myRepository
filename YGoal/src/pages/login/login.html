@@ -13,14 +13,22 @@
       <ion-input type="password" [(ngModel)]="user.password" placeholder="Mot de passe" clearInput></ion-input>
     </ion-item>
     <button ion-button (click)="login(user)" color="grey" class="log" style="border-radius: 10px">SE CONNECTER</button>
+    <button ion-button (click)="showForgotPassword()" class="log" style="border-radius: 10px">Mot de passe oublié</button>
     <div class="oubli">Mot de passe oublié</div>
     <div style="color: #f4f4f4;margin: auto;margin-top: 30px;margin-bottom: 0;">
       ou se connecter via les réseaux
     </div>
     <div class="sonetwork">
+      <button ion-button icon-left block (click)="fblogin()">
+        <ion-icon name="logo-facebook" style="font-size: 60px;margin-left: 15%"></ion-icon>
+      </button>
+      <ion-icon name="logo-twitter" style="font-size: 60px"></ion-icon>
+      <ion-icon name="logo-googleplus" style="font-size: 60px;margin-right: 15%"></ion-icon>
+
       <ion-icon name="logo-facebook" style="font-size: 50px;margin-left: 15%"></ion-icon>
       <ion-icon name="logo-twitter" style="font-size: 50px"></ion-icon>
       <ion-icon name="logo-googleplus" style="font-size: 50px;margin-right: 15%"></ion-icon>
+
     </div>
     <footer class="register">
       Pas encore membre?<br>
