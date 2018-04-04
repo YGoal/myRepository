@@ -3,6 +3,8 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {getResponseURL} from "@angular/http/src/http_utils";
 import { AngularFireAuth } from 'angularfire2/auth';
+import {AccueilPage} from "../../pages/accueil/accueil";
+import {NavController} from "ionic-angular";
 
 /*
   Generated class for the UserProvider provider.
@@ -26,6 +28,10 @@ export class UserProvider {
       .map(response => response.json());
   }
 
+  public signOut() {
+    this.afAuth.auth.signOut();
+    console.log(this.afAuth.auth.signOut());
+  }
   /*forgotPasswordUser(email: any){
     return this.afAuth.sendPasswordResetEmail(email);
   }*/
