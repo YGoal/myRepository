@@ -40,6 +40,8 @@ import { QRScanner } from '@ionic-native/qr-scanner';
 import { PropertiesProvider } from '../providers/properties/properties';
 import {Camera} from "@ionic-native/camera";
 
+import {Facebook} from '@ionic-native/facebook';
+
 
 
 @NgModule({
@@ -100,6 +102,7 @@ import {Camera} from "@ionic-native/camera";
     LogoComponent,
     MatchProvider,
     BabyProvider,
+    Facebook,
     Camera,
     PropertiesProvider
   ],
