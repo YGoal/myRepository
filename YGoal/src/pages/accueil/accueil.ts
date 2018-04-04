@@ -20,6 +20,7 @@ import {PropertiesProvider} from "../../providers/properties/properties";
   selector: 'page-accueil',
   templateUrl: 'accueil.html',
 })
+
 export class AccueilPage {
   actualMatch;
   isBabyUse = false;
