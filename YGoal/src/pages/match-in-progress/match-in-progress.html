@@ -4,6 +4,63 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-content padding>
 
+<ion-content class="gradientapp" (swipeleft)="menuTabs.swipeLeft($event)"
+             (swiperight)="menuTabs.swipeRight($event)">
+
+  <img class="img-logo" src="./assets/imgs/logo_YGOAL-02.png">
+  <h1 class="title">Match en cours</h1>
+
+  <table *ngIf="this.actualMatch !== null" class="table-score tableMatchInProgress">
+    <tr>
+      <td class="img-td">
+        <div style="color: #222222;">
+          <ion-icon name="people" style="color: #0071BC;font-size: 4em;"></ion-icon>
+        </div>
+      </td>
+      <td>
+        <h1 class="colorWhite">{{this.actualMatch.score1}} - {{this.actualMatch.score2}}</h1>
+      </td>
+      <td class="img-td">
+        <div style="color: #222222;">
+          <ion-icon name="people" style="color: #AF0000;font-size: 4em;"></ion-icon>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div *ngFor="let m of actualMatch.equipe1;let i=index">
+          {{m.name}}
+        </div>
+      </td>
+      <td></td>
+      <td>
+        <div *ngFor="let m of actualMatch.equipe2;let i=index">
+          {{m.name}}
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div *ngIf="this.actualMatch !== null">
+    <h4>Condition match</h4>
+    <div> Nombres de joueurs : {{ actualMatch.equipe1.length + actualMatch.equipe2.length }}</div>
+    <div *ngIf="this.actualMatch.typeVictoire === 'nbBut'"> Nombre buts max : {{actualMatch.conditionVictoire}}</div>
+    <div *ngIf="this.actualMatch.typeVictoire === 'duree'"> Durée max : {{actualMatch.conditionVictoire}}'</div>
+  </div>
+
+  <div>
+    <h1 class="title">Live Match</h1>
+    <table style="width: 100%;" *ngIf="this.actualMatch !== null">
+      <tr *ngFor="let m of this.actualMatch.buts;let i=index">
+        <td *ngIf="m.equipe === 1" style="border-right: 2px white solid;width: 25%;">but {{ m.min }}</td>
+        <td *ngIf="m.equipe === 1" style="border-left: 2px white solid;width: 25%;"></td>
+        <td *ngIf="m.equipe === 2" style="border-right: 2px white solid;width: 25%;"></td>
+        <td *ngIf="m.equipe === 2" style="border-left: 2px white solid;width: 25%;">but {{ m.min }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <menu-tabs page="in-progress-match"></menu-tabs>
 </ion-content>
+

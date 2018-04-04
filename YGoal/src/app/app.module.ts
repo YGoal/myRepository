@@ -5,10 +5,12 @@ import {MyApp} from './app.component';
 import {AboutPage} from '../pages/about/about';
 import {ArticlePage} from '../pages/article/article';
 import {ContactPage} from '../pages/contact/contact';
+import {QrReaderPage} from '../pages/qr-reader/qr-reader';
 import {ArchivedTodosPage} from '../pages/archived-todos/archived-todos';
 import {HomePage} from '../pages/home/home';
 import {LoginPage} from '../pages/login/login';
 import {TabsPage} from '../pages/tabs/tabs';
+import {MatchInProgressPage} from '../pages/match-in-progress/match-in-progress';
 import {TodoService} from '../providers/todo/todo';
 import {Dialogs} from '@ionic-native/dialogs';
 
@@ -47,10 +49,12 @@ import {Camera} from "@ionic-native/camera";
     ContactPage,
     AccueilPage,
     LoginPage,
+    QrReaderPage,
     ArticlePage,
     HomePage,
     MatchsPage,
     TabsPage,
+    MatchInProgressPage,
     LoginPage,
     ArchivedTodosPage,
     ProductDetailsPage,
@@ -75,9 +79,11 @@ import {Camera} from "@ionic-native/camera";
     LoginPage,
     AccueilPage,
     ArticlePage,
+    MatchInProgressPage,
     HomePage,
     MatchsPage,
     LoginPage,
+    QrReaderPage,
     TabsPage,
     ArchivedTodosPage,
     ProductDetailsPage
