@@ -17,7 +17,7 @@ import firebase from "firebase";
  */
 
 @Component({
-  selector: 'page-login',
+  selector: 'page-login', 
   templateUrl: 'login.html',
 })
 export class LoginPage {
