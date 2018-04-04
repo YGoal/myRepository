@@ -41,9 +41,15 @@
       s'inscrire via les réseaux
     </div>
     <div class="sonetwork">
-      <ion-icon name="logo-facebook" style="font-size: 60px;margin-left: 15%"></ion-icon>
-      <ion-icon name="logo-twitter" style="font-size: 60px"></ion-icon>
-      <ion-icon name="logo-googleplus" style="font-size: 60px;margin-right: 15%"></ion-icon>
+      <button ion-button icon-left block (click)="fblogin()">
+        <ion-icon name="logo-facebook" style="font-size: 60px;margin-left: 15%"></ion-icon>
+      </button>
+      <button ion-button icon-left block (click)="fblogin()">
+        <ion-icon name="logo-twitter" style="font-size: 60px;margin-left: 15%"></ion-icon>
+      </button>
+      <button ion-button icon-left block (click)="fblogin()">
+        <ion-icon name="logo-googleplus" style="font-size: 60px;margin-left: 15%"></ion-icon>
+      </button>
     </div>
   </div>
 </ion-content>

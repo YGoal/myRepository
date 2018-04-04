@@ -3,6 +3,7 @@ import {NavController} from "ionic-angular";
 
 import {MatchsPage} from "../../pages/matchs/matchs";
 import {AccueilPage} from "../../pages/accueil/accueil";
+import {MatchInProgressPage} from "../../pages/match-in-progress/match-in-progress";
 
 /**
  * Generated class for the MenuComponent component.
@@ -27,11 +28,11 @@ export class MenuComponent {
       src: this.assetsFolder + "Ycon2.png",
       component: MatchsPage,
     },
-    // {
-    //   name: "accueil",
-    //   src: this.assetsFolder + "Ycon3.png",
-    //   component: MatchsPage
-    // },
+    {
+      name: "in-progress-match",
+      src: this.assetsFolder + "Ycon3.png",
+      component: MatchInProgressPage
+    },
     // {
     //   name: "crea-match",
     //   src: this.assetsFolder + "Ycon4.png",
@@ -62,41 +63,24 @@ export class MenuComponent {
   }
 
   public swipeLeft() {
-    console.warn("swipeLeft");
-
     let actualPage = this.foundActualIndex();
-
-    console.warn("actualPagea",actualPage);
-
     actualPage++;
-
-    console.warn("actualPagea",actualPage);
-    console.warn( " this.pages.length - 1",this.pages.length - 1);
 
     if (actualPage === this.pages.length) {
       actualPage = 0;
     }
-
-    console.warn(actualPage);
 
     this.navCtrl.setRoot(this.pages[actualPage].component);
 
   }
 
   public swipeRight() {
-    console.warn("swipeRight");
-
     let actualPage = this.foundActualIndex();
     actualPage--;
-
-    console.warn("actualPagea",actualPage);
-    console.warn( " this.pages.length - 1",this.pages.length - 1);
 
     if (actualPage < 0) {
       actualPage = this.pages.length - 1;
     }
-
-    console.warn("actualPagea",actualPage);
 
     this.navCtrl.setRoot(this.pages[actualPage].component);
   }

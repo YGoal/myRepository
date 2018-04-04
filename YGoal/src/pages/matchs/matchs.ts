@@ -17,7 +17,7 @@ import { PropertiesProvider } from "../../providers/properties/properties";
 })
 export class MatchsPage {
 
-  @ViewChild(MenuComponent) menuTabs;
+  //@ViewChild(MenuComponent) private menuTabs : MenuComponent;
 
   victoire;
   nbJoueur;
