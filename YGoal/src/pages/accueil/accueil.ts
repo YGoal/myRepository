@@ -8,6 +8,7 @@ import {QrReaderPage} from "../qr-reader/qr-reader";
 
 import {MenuComponent} from "../../components/menu/menu";
 import {PropertiesProvider} from "../../providers/properties/properties";
+import {FileAttentePage} from "../file-attente/file-attente";
 
 
 /**
@@ -64,6 +65,9 @@ export class AccueilPage {
 
   goToMatchCrea() {
     this.navCtrl.setRoot(MatchsPage);
+  }
+  goToFileAttente() {
+    this.navCtrl.setRoot(FileAttentePage);
   }
 
   loadMatchs() {

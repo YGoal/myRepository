@@ -46,7 +46,7 @@ export class LoginPage {
 
   async login(user: UserProvider) {
     const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password).then(res => {
-      this.navCtrl.push('AccueilPage');
+      this.navCtrl.setRoot(AccueilPage);
       console.log(result);
 
     }, err => {

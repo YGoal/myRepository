@@ -41,6 +41,7 @@ import { PropertiesProvider } from '../providers/properties/properties';
 import {Camera} from "@ionic-native/camera";
 
 import {Facebook} from '@ionic-native/facebook';
+import {FileAttentePage} from "../pages/file-attente/file-attente";
 
 
 
@@ -60,6 +61,7 @@ import {Facebook} from '@ionic-native/facebook';
     LoginPage,
     ArchivedTodosPage,
     ProductDetailsPage,
+    FileAttentePage,
     MenuComponent,
     LogoComponent
   ],
@@ -86,6 +88,7 @@ import {Facebook} from '@ionic-native/facebook';
     MatchsPage,
     LoginPage,
     QrReaderPage,
+    FileAttentePage,
     TabsPage,
     ArchivedTodosPage,
     ProductDetailsPage

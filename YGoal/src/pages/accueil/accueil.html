@@ -44,6 +44,8 @@
   <h2 *ngIf="!isBabyUse"> Pas De Match Actif </h2>
 
   <button *ngIf="properties.idBaby != null" class="greyButton" (click)="goToMatchCrea()">JOUER UN MATCH</button>
+  <button *ngIf="properties.idBaby != null" class="greyButton" (click)="goToFileAttente()">VOIR LA FILE D'ATTENTE</button>
+
   <div [ngClass]="{'listTable' : isBabyUse == true}">
     <div *ngIf="properties.idBaby != null && isBabyUse">
       <h6 class="title"> Fil D'Attente </h6>
