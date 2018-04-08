@@ -4,6 +4,7 @@ import {UserProvider} from "../../providers/user/user"
 import {AngularFireAuth} from "angularfire2/auth";
 import {Camera} from "@ionic-native/camera";
 import firebase from 'firebase';
+import {Facebook} from "@ionic-native/facebook";
 
 @IonicPage()
 @Component({
@@ -23,7 +24,8 @@ export class RegisterPage {
               public navCtrl: NavController,
               public navParams: NavParams,
               private camera: Camera,
-              private alertCtrl: AlertController
+              private alertCtrl: AlertController,
+              public facebook:Facebook
               ) {
     this.myPhotoURL = "assets/imgs/bonhomme.jpg";
     this.myPhotosRef = firebase.storage().ref('/Photos/');
@@ -107,4 +109,19 @@ export class RegisterPage {
     });
     alert.present();
   }
+
+  fblogin(){
+    this.facebook.login(['email']).then(res=>{
+      const fc= firebase.auth.FacebookAuthProvider.credential(res.authResponse.accessToken)
+      firebase.auth().signInWithCredential(fc).then(fs=>{
+        alert("firebase sec")
+      }).catch(ferr=>{
+        alert("firebase errc")
+      })
+
+    }).catch(err=>{
+      alert(JSON.stringify(err))
+    })
+  }
+
 }

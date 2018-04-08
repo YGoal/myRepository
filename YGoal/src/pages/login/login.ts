@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { NavController, NavParams} from 'ionic-angular';
+import { NavController, NavParams, LoadingController} from 'ionic-angular';
 import {UserProvider} from "../../providers/user/user";
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Dialogs } from '@ionic-native/dialogs';
@@ -7,6 +7,7 @@ import {AccueilPage} from "../accueil/accueil";
 import {Facebook} from "@ionic-native/facebook";
 import {AlertController} from 'ionic-angular';
 import firebase from "firebase";
+import {errorHandler} from "@angular/platform-browser/src/browser";
 
 
 /**
@@ -24,9 +25,10 @@ export class LoginPage {
 
   user = {} as UserProvider;
 
-  constructor(private afAuth: AngularFireAuth, private dialogs: Dialogs,
+  constructor(private loadingCtrl : LoadingController, private afAuth: AngularFireAuth, private dialogs: Dialogs,
               public navCtrl: NavController, public navParams: NavParams,
-              public facebook:Facebook, public alertCtrl : AlertController) {
+              public facebook:Facebook, public alertCtrl : AlertController, public usersService : UserProvider) {
+    this.user = usersService;
   }
 
   fblogin(){
@@ -70,6 +72,7 @@ export class LoginPage {
     })
   };
 
+
   register() {
     this.navCtrl.push('RegisterPage');
   }
@@ -83,7 +86,7 @@ export class LoginPage {
       inputs: [
         {
           name: 'recoverEmail',
-          placeholder: 'ltrapeau69@gmail.com'
+          placeholder: 'Votre email'
         },
       ],
       buttons:[
@@ -96,8 +99,32 @@ export class LoginPage {
         {
           text: 'Submit',
           handler: data => {
-              console.log("TEST : " + data.recoverEmail)
 
+            console.log("TEST : " + data.recoverEmail)
+
+            let loading = this.loadingCtrl.create({
+              dismissOnPageChange: true,
+              content: "Mot de passe en train de se réinitialiser"
+            })
+            loading.present();
+
+              this.usersService.forgotPasswordUser(data.recoverEmail).then(() => {
+                loading.dismiss().then(() => {
+                  let alert = this.alertCtrl.create({
+                    title: "Aller voir vos mails !",
+                    subTitle: "Mot de passe réinitialisé !",
+                    buttons: ['OK']
+                  })
+                  alert.present();
+                });
+              }, error => {
+                  let alert = this.alertCtrl.create({
+                    title: "Erreur réinitialisation mot de passe",
+                    subTitle: error.message,
+                    buttons: ['OK']
+                  })
+                alert.present();
+            })
             }
           }
       ]
