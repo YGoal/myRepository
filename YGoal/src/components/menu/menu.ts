@@ -4,6 +4,7 @@ import {NavController} from "ionic-angular";
 import {MatchsPage} from "../../pages/matchs/matchs";
 import {AccueilPage} from "../../pages/accueil/accueil";
 import {MatchInProgressPage} from "../../pages/match-in-progress/match-in-progress";
+import {ProfilePage} from "../../pages/profile/profile";
 
 /**
  * Generated class for the MenuComponent component.
@@ -32,6 +33,11 @@ export class MenuComponent {
       name: "in-progress-match",
       src: this.assetsFolder + "Ycon3.png",
       component: MatchInProgressPage
+    },
+    {
+      name: "profile",
+      src: this.assetsFolder + "Ycon4.png",
+      component: ProfilePage
     },
     // {
     //   name: "crea-match",

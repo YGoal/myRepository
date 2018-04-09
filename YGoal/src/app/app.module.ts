@@ -9,6 +9,7 @@ import {QrReaderPage} from '../pages/qr-reader/qr-reader';
 import {ArchivedTodosPage} from '../pages/archived-todos/archived-todos';
 import {HomePage} from '../pages/home/home';
 import {LoginPage} from '../pages/login/login';
+import {ProfilePage} from '../pages/profile/profile';
 import {TabsPage} from '../pages/tabs/tabs';
 import {MatchInProgressPage} from '../pages/match-in-progress/match-in-progress';
 import {TodoService} from '../providers/todo/todo';
@@ -61,7 +62,8 @@ import {Facebook} from '@ionic-native/facebook';
     ArchivedTodosPage,
     ProductDetailsPage,
     MenuComponent,
-    LogoComponent
+    LogoComponent,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -88,7 +90,8 @@ import {Facebook} from '@ionic-native/facebook';
     QrReaderPage,
     TabsPage,
     ArchivedTodosPage,
-    ProductDetailsPage
+    ProductDetailsPage,
+    ProfilePage
   ],
   providers: [
     ProductService,
