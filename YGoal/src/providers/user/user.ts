@@ -3,6 +3,8 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {getResponseURL} from "@angular/http/src/http_utils";
 import { AngularFireAuth } from 'angularfire2/auth';
+import {AccueilPage} from "../../pages/accueil/accueil";
+import {NavController} from "ionic-angular";
 import * as firebase from 'firebase';
 
 /*
@@ -27,6 +29,11 @@ export class UserProvider {
       .map(response => response.json());
   }
 
+  public signOut() {
+    this.afAuth.auth.signOut();
+    console.log(this.afAuth.auth.signOut());
+  }
+
   public forgotPasswordUser(email: string){
     var auth = firebase.auth();
     return auth.sendPasswordResetEmail(email);
@@ -34,8 +41,5 @@ export class UserProvider {
     //this.auth.sendPasswordResetEmail(email,null);
   }
 
-  logout(){
-    return this.auth.signOut;
-  }
 
 }

@@ -94,8 +94,24 @@ table{
 }
 
 .img-logo{
+  float: left;
+  margin-left:45%;
+  align: center;
   max-height: 50px;
   max-width: 50px;
+}
+
+.img-button{
+  background:transparent;
+  border: none;
+}
+
+.img-logout{
+  float: left;
+  margin-left: 65%;
+  align: right;
+  max-height: 40px;
+  max-width: 40px;
 }
 
 .greyButton{

@@ -10,6 +10,11 @@
 
   <img class="img-logo" src="./assets/imgs/logo_YGOAL-02.png">
 
+  <button class="img-button" (click)="logout()">
+    <img class="img-logout" src="./assets/imgs/deconnexion.png"/>
+  </button>
+
+
   <p>{{baby.matchEnCour}}</p>
 
   <button *ngIf="properties.idBaby == null" ion-button full (click)="importBabyId()" color="light">
@@ -44,6 +49,8 @@
   <h2 *ngIf="!isBabyUse"> Pas De Match Actif </h2>
 
   <button *ngIf="properties.idBaby != null" class="greyButton" (click)="goToMatchCrea()">JOUER UN MATCH</button>
+  <button *ngIf="properties.idBaby != null" class="greyButton" (click)="goToMatchCrea()">VOIR LA FILE D'ATTENTE</button>
+
   <div [ngClass]="{'listTable' : isBabyUse == true}">
     <div *ngIf="properties.idBaby != null && isBabyUse">
       <h6 class="title"> Fil D'Attente </h6>
