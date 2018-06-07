@@ -10,6 +10,7 @@ import {QRScanner, QRScannerStatus} from '@ionic-native/qr-scanner';
 import {PropertiesProvider} from "../../providers/properties/properties";
 import {FileAttentePage} from "../file-attente/file-attente";
 import {LoginPage} from "../login/login";
+import {ProfilePage} from "../profile/profile";
 
 
 /**
@@ -30,7 +31,7 @@ export class AccueilPage {
   history;
 
   //@ViewChild(MenuComponent) menuTabs;
-
+  user = {} as UserProvider;
 
 
   constructor(public userService : UserProvider, public navCtrl: NavController, public matchProvider: MatchProvider, public babyProvider: BabyProvider, public navParams: NavParams, private qrScanner: QRScanner, private properties: PropertiesProvider) {
@@ -39,8 +40,7 @@ export class AccueilPage {
       score1: 0,
       score2: 0,
     };
-    //this.user = userService;
-      //user = {} as UserProvider;
+    this.user = userService;
 
     if (properties.idBaby != null) {
       this.loadMatchs();
@@ -99,6 +99,7 @@ export class AccueilPage {
   goToMatchCrea() {
     this.navCtrl.setRoot(MatchsPage);
   }
+
   goToFileAttente() {
     this.navCtrl.setRoot(FileAttentePage);
   }

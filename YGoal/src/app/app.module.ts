@@ -9,7 +9,6 @@ import {QrReaderPage} from '../pages/qr-reader/qr-reader';
 import {ArchivedTodosPage} from '../pages/archived-todos/archived-todos';
 import {HomePage} from '../pages/home/home';
 import {LoginPage} from '../pages/login/login';
-import {ProfilePage} from '../pages/profile/profile';
 import {TabsPage} from '../pages/tabs/tabs';
 import {MatchInProgressPage} from '../pages/match-in-progress/match-in-progress';
 import {TodoService} from '../providers/todo/todo';
@@ -64,8 +63,7 @@ import {FileAttentePage} from "../pages/file-attente/file-attente";
     ProductDetailsPage,
     FileAttentePage,
     MenuComponent,
-    LogoComponent,
-    ProfilePage
+    LogoComponent
   ],
   imports: [
     BrowserModule,
@@ -93,8 +91,7 @@ import {FileAttentePage} from "../pages/file-attente/file-attente";
     FileAttentePage,
     TabsPage,
     ArchivedTodosPage,
-    ProductDetailsPage,
-    ProfilePage
+    ProductDetailsPage
   ],
   providers: [
     ProductService,
